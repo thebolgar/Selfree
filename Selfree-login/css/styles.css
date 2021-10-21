@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.body {
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+.container {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.login__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  animation-name: popup;
+  animation-duration: 1s;
+}
+
+.login__inner-logo img {
+  width: 210px;
+  height: 45px;
+}
+
+.login__inner-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.1;
+  margin-top: 10px;
+  opacity: .9;
+}
+
+.login__inner-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__inner .form__input-email,
+.login__inner .form__input-password {
+  width: 300px;
+  height: 34px;
+  border-width: 1px;
+  text-rendering: auto;
+  border: 1px solid #e5e6e7;
+  padding: 6px 12px;
+}
+
+.login__inner .form__input-email::placeholder,
+.login__inner .form__input-password::placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.login__inner .form__input-email:focus,
+.login__inner .form__input-password:focus {
+  outline: 1px solid #1ab394;
+}
+
+.login__inner .form__input-email {
+  margin: 15px 0 30px;
+}
+
+.login__inner .form__input-lable {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  margin: 20px 0;
+}
+
+.login__inner .form__input-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 34px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background: #1c84c6;
+  transition: all .2s linear;
+  opacity: .8;
+  position: relative;
+  cursor: pointer;
+}
+
+.login__inner .form__input-btn::before {
+  content: url(../images/enter.svg);
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  left: 74px;
+  top: 9px;
+}
+
+.login__inner .form__input-btn:hover {
+  background: #045f97;
+  opacity: .8;
+}
+
+.login__inner .form__input-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 30px;
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  border: 1px solid #e7eaec;
+  margin-top: 15px;
+  color: #000;
+  opacity: .9;
+}
+
+.login__inner .form__input-link:hover {
+  border: 1px solid #d2d2d2;
+}
+
+@keyframes popup {
+  from {
+    padding-top: 0;
+    opacity: 0;
+  }
+  to {
+    padding-top: 40px;
+    opacity: 1;
+  }
+}

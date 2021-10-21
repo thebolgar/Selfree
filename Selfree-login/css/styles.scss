@@ -1,0 +1,147 @@
+// === IMPORTS ===
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// === MIXINS ===
+
+@mixin ft-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+// === COMMON CLASES ===
+.body {
+    overflow-x: hidden;
+    min-width: 320px;
+}
+.container {
+    width: 320px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+// === LOGIN ===
+
+.login__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+
+    animation-name: popup;
+    animation-duration: 1s;
+   
+    &-logo {
+        img {
+            width: 210px;
+            height: 45px;
+        }
+    }
+
+    &-title {
+        @include ft-sans();
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.1;
+        margin-top: 10px;
+        opacity: .9;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form__input-email,
+    .form__input-password {
+        width: 300px;
+        height: 34px;
+        border-width: 1px;
+        text-rendering: auto;
+        border: 1px solid #e5e6e7;
+        padding: 6px 12px;
+        &::placeholder {
+            @include ft-sans();
+            font-size: 14px;
+        }
+
+        &:focus {
+            outline: 1px solid #1ab394;
+        }
+    }
+
+    .form__input-email {
+        margin: 15px 0 30px;
+    }
+
+    .form__input-lable {
+        @include ft-sans();
+        font-size: 13px;
+        margin: 20px 0;
+    }
+
+    .form__input-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 34px;
+        @include ft-sans();
+        font-size: 14px;
+        color: #fff;
+        background: #1c84c6;
+        transition: all .2s linear;
+        opacity: .8;
+        position: relative;
+        cursor: pointer;
+        
+        &::before {
+            content: url(../images/enter.svg);
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            left: 74px;
+            top: 9px;
+            
+
+        }
+        
+        &:hover {
+            background: #045f97;
+            opacity: .8;
+        }
+    }
+    .form__input-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 30px;
+        background-color: #fff;
+        @include ft-sans();
+        font-size: 12px;
+        text-decoration: none;
+        border: 1px solid #e7eaec;
+        margin-top: 15px;
+        color: #000;
+        opacity: .9;
+
+        &:hover {
+            border: 1px solid #d2d2d2
+        }
+    }
+    
+}
+
+@keyframes popup {
+    from {
+        padding-top: 0;
+        opacity: 0;
+    }
+    to {
+        padding-top: 40px;
+        opacity: 1;
+    }
+}
